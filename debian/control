@@ -1,0 +1,49 @@
+Source: python-tornado
+Section: web
+X-Python-Version: >= 2.6
+X-Python3-Version: >= 3.2
+Priority: optional
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+XSBC-Original-Maintainer: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
+Uploaders: Carl Chenet <chaica@debian.org>,
+           Yaroslav Halchenko <debian@onerussian.com>,
+           Julian Taylor <jtaylor.debian@googlemail.com>
+Build-Depends: debhelper (>= 7.0.50~),
+               python-all (>= 2.6.6-3),
+               python3-all,
+               python3-setuptools
+Standards-Version: 3.9.5
+Homepage: http://www.tornadoweb.org/
+Vcs-Svn: svn://anonscm.debian.org/python-modules/packages/python-tornado/trunk/
+Vcs-Browser: http://anonscm.debian.org/viewvc/python-modules/packages/python-tornado/trunk/
+XS-Testsuite: autopkgtest
+
+Package: python-tornado
+Architecture: any
+Depends: ca-certificates,
+         python (>= 2.6) | python-simplejson,
+         python-pycurl,
+         ${misc:Depends},
+         ${shlibs:Depends},
+         ${python:Depends}
+Recommends: python (>= 2.6) | python-multiprocessing, python-mysqldb
+Description: scalable, non-blocking web server and tools
+ Tornado is an open source version of the scalable, non-blocking
+ web server and tools that power FriendFeed. The FriendFeed application
+ is written using a web framework that looks a bit like web.py or
+ Google's webapp, but with additional tools and optimizations to take
+ advantage of the underlying non-blocking infrastructure.
+ .
+ This is the Python 2 version of the package.
+
+Package: python3-tornado
+Architecture: any
+Depends: ca-certificates, ${misc:Depends}, ${shlibs:Depends}, ${python3:Depends}
+Description: scalable, non-blocking web server and tools - Python 3 package
+ Tornado is an open source version of the scalable, non-blocking
+ web server and tools that power FriendFeed. The FriendFeed application
+ is written using a web framework that looks a bit like web.py or
+ Google's webapp, but with additional tools and optimizations to take
+ advantage of the underlying non-blocking infrastructure.
+ .
+ This is the Python 3 version of the package.

@@ -1,0 +1,17 @@
+#!/bin/sh
+set -efu
+
+PYS=${PYS:-"$(py3versions -r 2>/dev/null)"}
+
+cd "$ADTTMP"
+
+for py in $PYS; do
+    echo "=== $py ==="
+    # py3curl is broken, skip tests if it is installed
+    # https://github.com/facebook/tornado/issues/671
+    if $py -c 'import curl' >/dev/null 2>&1; then
+        echo "Skipping test with $py  as pycurl is installed"
+        continue
+    fi
+    $py /usr/lib/python3/dist-packages/tornado/test/runtests.py 2>&1
+done

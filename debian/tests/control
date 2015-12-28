@@ -1,0 +1,6 @@
+Tests: python2
+Depends: python-tornado, python-all, python-twisted, python-pycurl
+
+#py3curl broken (https://github.com/facebook/tornado/issues/671)
+Tests: python3
+Depends: python3-tornado, python3-all
